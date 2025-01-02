@@ -1,41 +1,4 @@
-import matplotlib.pyplot as plt
-import numpy as np
-
-
-def hypocycloid(a, r, r1):
-    angles = np.linspace(0, 200 * np.pi, 10000)
-    x = a - (r - r1) * np.sin(angles * r1 / r) + r1 * np.sin(angles)
-    y = a - (r - r1) * np.cos(angles * r1 / r) + r1 * np.cos(angles)
-    return x, y
-
-
-def epicycloid(a, r, r1):
-    angles = np.linspace(0, 200 * np.pi, 10000)
-    x = a - (r + r1) * np.sin(angles * r1 / r) + r1 * np.sin(angles)
-    y = a - (r + r1) * np.cos(angles * r1 / r) + r1 * np.cos(angles)
-    return x, y
-
-
-def hypotrochoid(a, r, r1, k):
-    angles = np.linspace(0, 200 * np.pi, 10000)
-    x = a - (r - r1) * np.sin(angles * r1 / r) + k * r1 * np.sin(angles)
-    y = a - (r - r1) * np.cos(angles * r1 / r) + k * r1 * np.cos(angles)
-    return x, y
-
-
-def epitrochoid(a, r, r1, k):
-    angles = np.linspace(0, 200 * np.pi, 10000)
-    x = a - (r + r1) * np.sin(angles * r1 / r) + k * r1 * np.sin(angles)
-    y = a - (r + r1) * np.cos(angles * r1 / r) + k * r1 * np.cos(angles)
-    return x, y
-
-
-def plot(x, y, title):
-    plt.figure(figsize=(6, 6))
-    plt.plot(x, y, color='magenta')
-    plt.title(title)
-    plt.axis('equal')
-    plt.show()
+from SpiroShapes.Spirograph_functions import *
 
 
 while True:
